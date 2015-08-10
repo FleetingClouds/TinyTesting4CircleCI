@@ -31,5 +31,4 @@ dependencies:
 test:
   # Tests that replace CircleCI's inferred tests
   override:
-    # - tests/tinyTests/test-all.sh
-    - tests/nightwatch/runTests.js
+    - tests/tinyTests/test-all.sh
