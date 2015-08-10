@@ -8,11 +8,10 @@ machine:
   node:
     # Can't be certain that this build wlll work with all future versions: so specify.
     version: 0.10.33
-
-dependencies:
   environment:
     NW_DIR: "tests/nightwatch"
 
+dependencies:
   # Whatever is written to these directories during one build will be
   #    restored verbatim on every future build.
   cache_directories:
