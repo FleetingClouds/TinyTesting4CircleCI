@@ -60,4 +60,4 @@ test:
   # Tests that replace CircleCI's inferred tests
   override:
     # - tests/tinyTests/test-all.sh
-    - ${NW_DIR}/runTests.js | bunyan
+    - ${NW_DIR}/runTests.js
