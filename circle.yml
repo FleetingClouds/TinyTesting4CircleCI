@@ -16,7 +16,8 @@ dependencies:
   #    restored verbatim on every future build.
   cache_directories:
     - ~/.meteor
-    - tests/nightwatch/node_modules
+    - ./tests/nightwatch/node_modules
+    - ~/nvm/v0.10.33/lib/node_modules
   # Dependencies of the build run before CircleCI's inferred commands
   pre:
     # Install  Meteor
@@ -28,6 +29,8 @@ dependencies:
           background: true
     # Prepare place to which npm will install Nightwatch dependencies
     - mkdir -p ${NW_DIR}/node_modules
+    # If Bunyan is already cached, do not need to install it again.
+    - if [ ! -d ~/nvm/v0.10.33/lib/node_modules/bunyan/ ]; then npm install -g bunyan; else echo "Bunyan seems to be cached"; fi;
     # If Bunyan is already cached, do not need to install it again.
     - if [ ! -d ${NW_DIR}/node_modules/bunyan/ ]; then npm install --prefix ${NW_DIR} bunyan; else echo "Bunyan seems to be cached"; fi;
     # If Minimist is already cached, do not need to install it again.
