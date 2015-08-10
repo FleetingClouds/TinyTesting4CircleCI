@@ -25,7 +25,7 @@ dependencies:
     # If Meteor is already cached, do not need to build it again.
     - if [ ! -e ~/.meteor/meteor ]; then curl https://install.meteor.com | /bin/sh; fi
     # Launch Meteor in background
-    - meteor:
+    - ~/.meteor/meteor:
           background: true
     # Prepare place to which npm will install Nightwatch dependencies
     - mkdir -p ${NW_DIR}/node_modules
