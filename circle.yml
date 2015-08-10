@@ -33,6 +33,8 @@ dependencies:
     - if [ ! -d ~/node_modules/touch/ ]; then npm install --prefix ~ touch; else echo "Touch seems to be cached"; fi;
     # If MkDirP is already cached, do not need to install it again.
     - if [ ! -d ~/node_modules/mkdirp/ ]; then npm install --prefix ~ mkdirp; else echo "MkDirP seems to be cached"; fi;
+    # If NightWatch is already cached, do not need to install it again.
+    - if [ ! -d ~/node_modules/nightwatch/ ]; then npm install --prefix ~ nightwatch; else echo "NightWatch seems to be cached"; fi;
     # Have symlink to a cached directory
     - ln -s ~/node_modules node_modules
 test:
