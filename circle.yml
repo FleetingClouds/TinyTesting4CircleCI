@@ -37,6 +37,8 @@ dependencies:
     - if [ ! -d ~/node_modules/nightwatch/ ]; then npm install --prefix ~ nightwatch; else echo "NightWatch seems to be cached"; fi;
     # If ChromeDriver is already cached, do not need to install it again.
     - if [ ! -d ~/node_modules/chromedriver/ ]; then npm install --prefix ~ chromedriver; else echo "ChromeDriver seems to be cached"; fi;
+    # If NPM is already cached, do not need to install it again.
+    - if [ ! -d ~/node_modules/npm/ ]; then npm install --prefix ~ npm; else echo "NPM seems to be cached"; fi;
     # Have symlink to a cached directory
     - ln -s ~/node_modules node_modules
 test:
