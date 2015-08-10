@@ -24,7 +24,7 @@ dependencies:
     # Now install WebDriver
     - mkdir -p ~/node_modules
     # If WebDriver is already cached, do not need to install it again.
-    - if [ ! -d ~/node_modules/selenium-webdriver/ ]; then npm install --prefix ~ selenium-webdriver; else echo "Selenium Webdriver seems to be cached"; fi;
+    #- if [ ! -d ~/node_modules/selenium-webdriver/ ]; then npm install --prefix ~ selenium-webdriver; else echo "Selenium Webdriver seems to be cached"; fi;
     # If Bunyan is already cached, do not need to install it again.
     - if [ ! -d ~/node_modules/bunyan/ ]; then npm install --prefix ~ bunyan; else echo "Bunyan seems to be cached"; fi;
     # If Minimist is already cached, do not need to install it again.
@@ -47,6 +47,9 @@ dependencies:
     - if [ ! -d ~/node_modules/underscore/ ]; then npm install --prefix ~ underscore; else echo "Underscore seems to be cached"; fi;
     # Have symlink to a cached directory
     - ln -s ~/node_modules node_modules
+    # Get selenium-server-standalone
+    - wget -P tests/nightwatch/node_modules --no-clobber http://selenium-release.storage.googleapis.com/2.47/selenium-server-standalone-2.47.1.jar
+#
 test:
   # Tests that replace CircleCI's inferred tests
   override:
