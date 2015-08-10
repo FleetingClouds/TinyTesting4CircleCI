@@ -27,7 +27,9 @@ dependencies:
     - if [ ! -d ~/node_modules/selenium-webdriver/ ]; then npm install --prefix ~ selenium-webdriver; else echo "Selenium Webdriver seems to be cached"; fi;
     # Have symlink to a cached directory
     - ln -s ~/node_modules node_modules
-
+  # Have no package.json so all npm dependencies are explicit and manual
+  override:
+    - npm install -g bunyan
 test:
   # Tests that replace CircleCI's inferred tests
   override:
