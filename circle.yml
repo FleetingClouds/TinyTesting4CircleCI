@@ -18,6 +18,7 @@ dependencies:
     - ~/.meteor
     - ./tests/nightwatch/node_modules
     - ~/nvm/v0.10.33/lib/node_modules
+    - ~/nvm/v0.10.33/bin
   # Dependencies of the build run before CircleCI's inferred commands
   pre:
     # Install  Meteor
