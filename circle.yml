@@ -43,6 +43,8 @@ dependencies:
     - if [ ! -d ~/node_modules/fs-extra/ ]; then npm install --prefix ~ fs-extra; else echo "FS-Extra seems to be cached"; fi;
     # If Requast is already cached, do not need to install it again.
     - if [ ! -d ~/node_modules/request/ ]; then npm install --prefix ~ request; else echo "Requast seems to be cached"; fi;
+    # If Underscore is already cached, do not need to install it again.
+    - if [ ! -d ~/node_modules/underscore/ ]; then npm install --prefix ~ underscore; else echo "Underscore seems to be cached"; fi;
     # Have symlink to a cached directory
     - ln -s ~/node_modules node_modules
 test:
