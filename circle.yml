@@ -38,7 +38,7 @@ dependencies:
     # If ChromeDriver is already cached, do not need to install it again.
     - if [ ! -d ${NW_DIR}/node_modules/chromedriver/ ]; then npm install --prefix ${NW_DIR} chromedriver; else echo "ChromeDriver seems to be cached"; fi;
     # If NPM is already cached, do not need to install it again.
-    - if [ ! -d ${NW_DIR}/node_modules/chromedriver/ ]; then npm install --prefix ${NW_DIR} chromedriver; else echo "ChromeDriver seems to be cached"; fi;
+    - if [ ! -d ${NW_DIR}/node_modules/npm/ ]; then npm install --prefix ${NW_DIR} npm; else echo "NPM seems to be cached"; fi;
     # If FS-Extra is already cached, do not need to install it again.
     - if [ ! -d ${NW_DIR}/node_modules/fs-extra/ ]; then npm install --prefix ${NW_DIR} fs-extra; else echo "FS-Extra seems to be cached"; fi;
     # If Requast is already cached, do not need to install it again.
