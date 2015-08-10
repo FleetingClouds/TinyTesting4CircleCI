@@ -29,6 +29,8 @@ dependencies:
     - if [ ! -d ~/node_modules/bunyan/ ]; then npm install --prefix ~ bunyan; else echo "Bunyan seems to be cached"; fi;
     # If Minimist is already cached, do not need to install it again.
     - if [ ! -d ~/node_modules/minimist/ ]; then npm install --prefix ~ minimist; else echo "Minimist seems to be cached"; fi;
+    # If Touch is already cached, do not need to install it again.
+    - if [ ! -d ~/node_modules/touch/ ]; then npm install --prefix ~ touch; else echo "Touch seems to be cached"; fi;
     # Have symlink to a cached directory
     - ln -s ~/node_modules node_modules
 test:
