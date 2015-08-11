@@ -44,8 +44,6 @@ ln -s ${LOCAL_NODEJS_MODULES}/selenium-server-standalone-2.47.1.jar selenium-ser
 DIR=$(dirname $0)
 echo ">>>${DIR}<<<"
 cd ${DIR}
+ls -l
 pwd
 echo "Dependencies loaded."
-
-
-
