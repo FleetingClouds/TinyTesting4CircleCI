@@ -8,11 +8,6 @@ machine:
   node:
     # Can't be certain that this build wlll work with all future versions: so specify.
     version: 0.10.33
-  environment:
-    # LOCAL_MODULES: ${HOME}
-    # GLOBAL_MODULES: ${HOME}/nvm/v0.10.33/lib/
-    NW_DIR: ${HOME}/${CIRCLE_PROJECT_REPONAME}/tests/nightwatch
-
 dependencies:
   # Whatever is written to these directories during one build will be
   #    restored verbatim on every future build.
@@ -23,9 +18,6 @@ dependencies:
     - ~/nvm/v0.10.33/bin
   # Dependencies of the build run before CircleCI's inferred commands
   pre:
-    # Check env vars
-    - echo "${NW_DIR}"
-    - echo "${CIRCLE_PROJECT_REPONAME}"
     # Install  Meteor
     - mkdir -p ~/.meteor
     # If Meteor is already cached, do not need to build it again.
@@ -33,10 +25,13 @@ dependencies:
     # Launch Meteor in background
     - ~/.meteor/meteor:
           background: true
+    # Prepare TinyTest dependencies
+    # If WebDriver is already cached, do not need to build it again.
+    - if [ ! -d ${HOME}/node_modules/selenium-webdriver/ ]; then npm install --prefix ${HOME} selenium-webdriver; else echo "Selenium Webdriver seems to be cached"; fi;
     # Prepare Nightwatch dependencies
     - ./tests/nightwatch/bin/install-nightwatch-dependencies.sh
 test:
   # Tests that replace CircleCI's inferred tests
   override:
-    - tests/tinyTests/test-all.sh
-    - ${NW_DIR}/runTests.js | bunyan
+    - ${HOME}/${CIRCLE_PROJECT_REPONAME}/tests/tinyTests/test-all.sh
+    - ${HOME}/${CIRCLE_PROJECT_REPONAME}/tests/nightwatch/runTests.js | bunyan
