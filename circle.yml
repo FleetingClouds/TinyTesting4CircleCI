@@ -27,7 +27,7 @@ dependencies:
     - echo "${LOCAL_MODULES}"
     - echo "${GLOBAL_MODULES}"
     - echo "${NW_DIR}"
-    - echo "$(PWD)"
+    - echo "$(pwd)"
     # Install  Meteor
     - mkdir -p ~/.meteor
     # If Meteor is already cached, do not need to build it again.
