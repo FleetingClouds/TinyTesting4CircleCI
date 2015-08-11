@@ -11,14 +11,14 @@ machine:
   environment:
     LOCAL_MODULES: ${HOME}
     GLOBAL_MODULES: ${HOME}/nvm/v0.10.33/lib/
-    NW_DIR: ${HOME}/tests/nightwatch
+    NW_DIR: ${HOME}/${CIRCLE_PROJECT_REPONAME}/tests/nightwatch
 
 dependencies:
   # Whatever is written to these directories during one build will be
   #    restored verbatim on every future build.
   cache_directories:
     - ~/.meteor
-    - ~/tests/nightwatch/node_modules
+    - ./tests/nightwatch/node_modules
     - ~/nvm/v0.10.33/lib/node_modules
     - ~/nvm/v0.10.33/bin
   # Dependencies of the build run before CircleCI's inferred commands
@@ -28,7 +28,6 @@ dependencies:
     - echo "${GLOBAL_MODULES}"
     - echo "${NW_DIR}"
     - echo "${CIRCLE_PROJECT_REPONAME}"
-    - echo "${CIRCLE_ARTIFACTS}"
     - echo "$(pwd)"
     
     # Install  Meteor
