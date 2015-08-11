@@ -27,10 +27,10 @@ dependencies:
   # Dependencies of the build run before CircleCI's inferred commands
   pre:
     # Check env vars
-    echo "${LOCAL_MODULES}"
-    echo "${LOCAL_MODULES1}"
-    echo "${LOCAL_MODULES2}"
-    echo "${LOCAL_MODULES3}"
+    - echo "${LOCAL_MODULES}"
+    - echo "${LOCAL_MODULES1}"
+    - echo "${LOCAL_MODULES2}"
+    - echo "${LOCAL_MODULES3}"
     # Install  Meteor
     - mkdir -p ~/.meteor
     # If Meteor is already cached, do not need to build it again.
