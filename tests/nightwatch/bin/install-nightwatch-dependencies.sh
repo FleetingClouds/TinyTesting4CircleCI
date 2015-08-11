@@ -41,7 +41,7 @@ echo "  -- installing Selenium in directory -- ${LOCAL_NODEJS_MODULES} $(pwd)."
 wget -P ${LOCAL_NODEJS_MODULES} --no-clobber http://selenium-release.storage.googleapis.com/2.47/selenium-server-standalone-2.47.1.jar
 ln -s ${LOCAL_NODEJS_MODULES}/selenium-server-standalone-2.47.1.jar selenium-server-standalone.jar
 #
-cd $(dirname $0)"
+cd $(dirname $0)
 pwd
 
 echo "Dependencies loaded."
