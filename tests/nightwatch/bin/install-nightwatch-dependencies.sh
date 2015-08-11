@@ -6,6 +6,9 @@
 # echo "  -- Ready to install NightWatch runner dependencies in -- $(pwd)."
 echo "  -- Ready to install NightWatch runner dependencies."
 #
+export GLOBAL_NODEJS=$(npm config get prefix)/lib
+export GLOBAL_NODEJS_MODULES=${GLOBAL_NODEJS}/node_modules
+#
 export LOCAL_NODEJS=${HOME}
 export LOCAL_NODEJS_MODULES=${LOCAL_NODEJS}/node_modules
 mkdir -p ${LOCAL_NODEJS_MODULES}
@@ -22,6 +25,14 @@ do
   fi;
 done
 #
+MDL="bunyan"
+if [ ! -d ${GLOBAL_NODEJS_MODULES}/${MDL}/ ]; then
+  echo "Installing '${MDL}' in directory -- ${GLOBAL_NODEJS_MODULES}."
+  npm install -y --global --prefix ${GLOBAL_NODEJS} ${MDL};
+else
+  echo "Node module '${MDL}' is already available.";
+fi;
+
 echo "  -- linking to chronedriver -- ${LOCAL_NODEJS_MODULES}."
 ln -s ${LOCAL_NODEJS_MODULES}/chromedriver chromedriver
 #
