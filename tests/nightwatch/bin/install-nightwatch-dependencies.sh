@@ -13,7 +13,7 @@ export LOCAL_NODEJS=${HOME}
 export LOCAL_NODEJS_MODULES=${LOCAL_NODEJS}/node_modules
 mkdir -p ${LOCAL_NODEJS_MODULES}
 #
-modules=( "touch" "bunyan" "underscore" "mkdirp" "nightwatch" "chromedriver" "minimist" "fs-extra" "request" )
+modules=( "touch" "bunyan" "underscore" "mkdirp" "nightwatch" "npm" "chromedriver" "minimist" "fs-extra" "request" )
 for idx in "${modules[@]}"
 do
   :
