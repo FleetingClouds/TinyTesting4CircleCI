@@ -18,7 +18,7 @@ dependencies:
   #    restored verbatim on every future build.
   cache_directories:
     - ~/.meteor
-    - ./tests/nightwatch/node_modules
+    - ~/node_modules
     - ~/nvm/v0.10.33/lib/node_modules
     - ~/nvm/v0.10.33/bin
   # Dependencies of the build run before CircleCI's inferred commands
@@ -40,7 +40,7 @@ dependencies:
     # Prepare place to which npm will install Nightwatch dependencies
     - mkdir -p ${LOCAL_MODULES}/node_modules
     # If Bunyan is already cached, do not need to install it again.
-    - if [ ! -d GLOBAL_MODULESnode_modules/bunyan/ ]; then npm install -g bunyan; else echo "Bunyan seems to be cached"; fi;
+    - if [ ! -d ${GLOBAL_MODULES}/node_modules/bunyan/ ]; then npm install -g bunyan; else echo "Bunyan seems to be cached"; fi;
     # If Bunyan is already cached, do not need to install it again.
     - if [ ! -d ${LOCAL_MODULES}/node_modules/bunyan/ ]; then npm install --prefix ${LOCAL_MODULES} bunyan; else echo "Bunyan seems to be cached"; fi;
     # If Minimist is already cached, do not need to install it again.
