@@ -33,8 +33,6 @@ dependencies:
 test:
   # Tests that replace CircleCI's inferred tests
   override:
-    - ls -l ${HOME}/${CIRCLE_PROJECT_REPONAME}/tests/tinyTests/test-all.sh
-    - ls -l ${HOME}/${CIRCLE_PROJECT_REPONAME}/tests/nightwatch/runTests.js
-    - ${HOME}/${CIRCLE_PROJECT_REPONAME}/tests/tinyTests/test-all.sh
     - ${HOME}/${CIRCLE_PROJECT_REPONAME}/tests/nightwatch/runTests.js | bunyan
+    - ${HOME}/${CIRCLE_PROJECT_REPONAME}/tests/tinyTests/test-all.sh
   #
