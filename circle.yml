@@ -35,6 +35,7 @@ test:
   override:
     - mkdir -p ${CIRCLE_TEST_REPORTS}/nightwatch/
     - ${HOME}/${CIRCLE_PROJECT_REPONAME}/tests/nightwatch/runTests.js > ${CIRCLE_TEST_REPORTS}/nightwatch/result.json
+    - cat ${CIRCLE_TEST_REPORTS}/nightwatch/result.json | bunyan
     # - ${HOME}/${CIRCLE_PROJECT_REPONAME}/tests/nightwatch/runTests.js | bunyan
     - ${HOME}/${CIRCLE_PROJECT_REPONAME}/tests/tinyTests/test-all.sh
   #
