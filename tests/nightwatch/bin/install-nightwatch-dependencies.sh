@@ -6,8 +6,8 @@
 # echo "  -- Ready to install NightWatch runner dependencies in -- $(pwd)."
 echo "  -- Ready to install NightWatch runner dependencies."
 #
-export GLOBAL_NODEJS=$(npm config get prefix)/lib
-export GLOBAL_NODEJS_MODULES=${GLOBAL_NODEJS}/node_modules
+export GLOBAL_NODEJS=$(npm config get prefix)
+export GLOBAL_NODEJS_MODULES=${GLOBAL_NODEJS}/lib/node_modules
 #
 export LOCAL_NODEJS=${HOME}
 export LOCAL_NODEJS_MODULES=${LOCAL_NODEJS}/node_modules
