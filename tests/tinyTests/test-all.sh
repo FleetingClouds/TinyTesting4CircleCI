@@ -12,6 +12,8 @@ PACKAGES=$( $GREP -Prl 'Package\.(onTest|on_test)(?!.*// NOTEST)' packages | $GR
 
 SCRIPT_DIR="$( dirname "${BASH_SOURCE[0]}" )"
 
+echo ">>> Looping through packages . . . "
+
 # Perform tests.
 TESTS_FAILED=0
 PACKAGES_FAILED=""
