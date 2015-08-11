@@ -34,7 +34,7 @@ else
 fi;
 
 echo "  -- linking to chronedriver -- ${LOCAL_NODEJS_MODULES}."
-ln -s ${LOCAL_NODEJS_MODULES}/chromedriver chromedriver
+ln -s ${LOCAL_NODEJS_MODULES}/chromedriver $(dirname $0)/chromedriver
 #
 echo "  -- installing Selenium in directory -- ${LOCAL_NODEJS_MODULES} $(dirname $0)."
 
@@ -47,6 +47,3 @@ cd ${DIR}
 ls -l
 pwd
 echo "Dependencies loaded."
-
-
-
