@@ -37,6 +37,7 @@ echo "  -- linking to chronedriver -- ${LOCAL_NODEJS_MODULES}."
 ln -s ${LOCAL_NODEJS_MODULES}/chromedriver chromedriver
 #
 echo "  -- installing Selenium in directory -- ${LOCAL_NODEJS_MODULES} $(pwd)."
+echo " $(dirname $0)."
 wget -P ${LOCAL_NODEJS_MODULES} --no-clobber http://selenium-release.storage.googleapis.com/2.47/selenium-server-standalone-2.47.1.jar
 ln -s ${LOCAL_NODEJS_MODULES}/selenium-server-standalone-2.47.1.jar selenium-server-standalone.jar
 #
