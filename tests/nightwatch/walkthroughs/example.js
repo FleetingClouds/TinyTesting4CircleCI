@@ -6,7 +6,7 @@ module.exports = {
   "Layout and Static Pages": function pageLayout(client) {
     client
       .resizeWindow(1024, 768)
-      .verify.elementPresent("body")
+      .verify.elementPresent("booty")
 
       .end();
   },
